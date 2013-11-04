@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/basic_widgets_example.qml</file>
+    </qresource>
+</RCC>
