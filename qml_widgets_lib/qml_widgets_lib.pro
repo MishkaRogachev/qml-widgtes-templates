@@ -15,5 +15,8 @@ RESOURCES += \
 OTHER_FILES += \
     qml/Basic/BasicItem.qml \
     qml/Basic/Controls/Clickable.qml \
-    qml/Basic/Misk/Palette.qml
+    qml/Basic/Misk/Palette.qml \
+    qml/Basic/Widgets/Widget.qml \
+    qml/Basic/Misk/Shadow.qml \
+    qml/Basic/Containers/TabWidget.qml
 

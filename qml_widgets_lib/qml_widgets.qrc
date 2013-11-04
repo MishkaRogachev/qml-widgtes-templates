@@ -3,5 +3,8 @@
         <file>qml/Basic/Controls/Clickable.qml</file>
         <file>qml/Basic/BasicItem.qml</file>
         <file>qml/Basic/Misk/Palette.qml</file>
+        <file>qml/Basic/Widgets/Widget.qml</file>
+        <file>qml/Basic/Misk/Shadow.qml</file>
+        <file>qml/Basic/Containers/TabWidget.qml</file>
     </qresource>
 </RCC>

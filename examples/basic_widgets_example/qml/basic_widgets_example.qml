@@ -1,13 +1,12 @@
 import QtQuick 2.0
-import "Basic/Controls"
+import "Basic/Containers"
 
-Rectangle {
+TabWidget {
     width: 1024
     height: 768
-    color: "gray"
 
-    Clickable {
-        anchors.centerIn: parent
-
-    }
+    tabsModel: [
+        { file: "qrc:/qml/Tabs/ControlsTab.qml", text: qsTr("Controls") },
+        { file: "qrc:/qml/Tabs/AboutTab.qml", text: qsTr("About") },
+    ]
 }

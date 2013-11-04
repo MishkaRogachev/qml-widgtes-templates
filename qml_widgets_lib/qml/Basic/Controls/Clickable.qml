@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import "../"
+import "../Misk"
 
 BasicItem {
     id: clickable
@@ -13,27 +14,20 @@ BasicItem {
     width: contentsRow.width + 30
     height: contentsRow.height + 10
     
+    Shadow {
+        color: palette.shadowColor
+    }
+
     Rectangle {
         id: background
-        color: "#66000000"
+        color: mouseArea.pressed || clickable.checked ?
+                   palette.colorBackgroundActive :
+                   palette.colorBackgroundRaised
         anchors.fill: parent
         radius: 3
         smooth: true
-
-        Rectangle {
-            id: foreground
-            color: mouseArea.pressed || clickable.checked ?
-                       palette.backgroundActiveColor :
-                       palette.backgroundSecondaryColor
-            anchors.fill: parent
-            anchors.topMargin: 0
-            anchors.leftMargin: 0
-            anchors.rightMargin: 1
-            anchors.bottomMargin: 1
-            radius: 3
-            smooth: true
-        }
     }
+
         
     Row {
         id: contentsRow

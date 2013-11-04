@@ -20,7 +20,9 @@ SOURCES += \
     basic_widgets_example.cpp
 
 OTHER_FILES += \
-    qml/basic_widgets_example.qml
+    qml/basic_widgets_example.qml \
+    qml/Tabs/ControlsTab.qml \
+    qml/Tabs/AboutTab.qml
 
 RESOURCES += \
     basic_widgets_example.qrc

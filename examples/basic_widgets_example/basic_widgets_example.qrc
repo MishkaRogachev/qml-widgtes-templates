@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/basic_widgets_example.qml</file>
+        <file>qml/Tabs/ControlsTab.qml</file>
+        <file>qml/Tabs/AboutTab.qml</file>
     </qresource>
 </RCC>
