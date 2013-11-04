@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/Basic/Controls/Clickable.qml</file>
+        <file>qml/Basic/BasicItem.qml</file>
+        <file>qml/Basic/Misk/Palette.qml</file>
+    </qresource>
+</RCC>
