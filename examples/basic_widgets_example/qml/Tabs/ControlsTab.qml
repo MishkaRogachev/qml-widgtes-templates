@@ -15,6 +15,7 @@ Item {
 
             Row {
                 spacing: 25
+                anchors.horizontalCenter: parent.horizontalCenter
 
                 Switch {}
 
@@ -31,6 +32,35 @@ Item {
 
             Slider {
                 id: slider
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Grid {
+                rows: 4
+                columns: 3
+                spacing: 15
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Repeater {
+                    model: [
+                        { text: "7" },
+                        { text: "8" },
+                        { text: "9" },
+                        { text: "4" },
+                        { text: "5" },
+                        { text: "6" },
+                        { text: "1" },
+                        { text: "2" },
+                        { text: "3" },
+                        { text: "C" },
+                        { text: "2" },
+                        { text: "<" },
+                    ]
+
+                    Button {
+                        text: modelData.text
+                    }
+                }
             }
         }
     }

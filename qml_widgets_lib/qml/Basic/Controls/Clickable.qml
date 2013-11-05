@@ -7,9 +7,10 @@ BasicItem {
     property alias text: textItem.text
     property alias icon: iconItem.source
     property alias textColor: textItem.color
+    property alias pressed: mouseArea.pressed
     signal clicked()
 
-    width: contentsRow.width + 20
+    width: Math.max(contentsRow.width, contentsRow.height) + 20
     height: contentsRow.height + 20
 
     Row {

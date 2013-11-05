@@ -21,5 +21,6 @@ OTHER_FILES += \
     qml/Basic/Containers/TabWidget.qml \
     qml/Basic/Controls/Switch.qml \
     qml/Basic/Controls/Slider.qml \
-    qml/Basic/Display/ProgressBar.qml
+    qml/Basic/Display/ProgressBar.qml \
+    qml/Basic/Controls/Button.qml
 

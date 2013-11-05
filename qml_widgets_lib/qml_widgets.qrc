@@ -9,5 +9,6 @@
         <file>qml/Basic/Controls/Switch.qml</file>
         <file>qml/Basic/Controls/Slider.qml</file>
         <file>qml/Basic/Display/ProgressBar.qml</file>
+        <file>qml/Basic/Controls/Button.qml</file>
     </qresource>
 </RCC>
