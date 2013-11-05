@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import "../Widgets"
+import "../Controls"
 
 Widget {
     id: tabWidget
@@ -8,11 +9,12 @@ Widget {
     // modelData must contain url property called "file" and string proprty "text"
 
     Rectangle {
-        id: tabBackground
-        anchors.fill: tabBar
+        id: verticalSeparator
+        anchors.left: tabBar.left
+        anchors.right: tabBar.right
+        anchors.bottom: tabBar.bottom
+        height: 1
         color: palette.colorBackgroundSunken
-        radius: 3
-        smooth: true
     }
 
     Row {
@@ -31,31 +33,25 @@ Widget {
             Item {
                 id: tabItem
                 width: tabBar.width / tabRepeater.count
-                height: tabText.height
+                height: tabClickable.height
+
+                Clickable {
+                    id: tabClickable
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.verticalCenter: parent.verticalCenter
+                    text: modelData.text
+                    onClicked: tabBar.activeTabIndex = index
+                }
 
                 Rectangle {
-                    anchors.fill: parent
-                    anchors.bottomMargin: -3
-                    color: palette.colorBackgroundNormal
-                    radius: 3
-                    smooth: true
+                    id: tabItemHighlight
+                    anchors.left: tabItem.left
+                    anchors.right: tabItem.right
+                    anchors.bottom: tabItem.bottom
+                    height: 5
+                    color: palette.colorActive
                     visible: tabBar.activeTabIndex === index
-                }
-
-                Text {
-                    id: tabText
-                    anchors.centerIn: parent
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                    color: palette.backgroundTextColor
-                    smooth: true
-                    font.pointSize: 16
-                    text: modelData.text
-                }
-
-                MouseArea {
-                    anchors.fill: parent
-                    onPressed: tabBar.activeTabIndex = index
                 }
             }
         }

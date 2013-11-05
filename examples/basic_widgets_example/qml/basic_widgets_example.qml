@@ -6,7 +6,7 @@ TabWidget {
     height: 768
 
     tabsModel: [
-        { file: "qrc:/qml/Tabs/ControlsTab.qml", text: qsTr("Controls") },
+        { file: "qrc:/qml/Tabs/ControlsTab.qml", text: qsTr("Controls & Display") },
         { file: "qrc:/qml/Tabs/AboutTab.qml", text: qsTr("About") },
     ]
 }

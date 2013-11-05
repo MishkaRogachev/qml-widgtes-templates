@@ -6,5 +6,8 @@
         <file>qml/Basic/Widgets/Widget.qml</file>
         <file>qml/Basic/Misk/Shadow.qml</file>
         <file>qml/Basic/Containers/TabWidget.qml</file>
+        <file>qml/Basic/Controls/Switch.qml</file>
+        <file>qml/Basic/Controls/Slider.qml</file>
+        <file>qml/Basic/Display/ProgressBar.qml</file>
     </qresource>
 </RCC>

@@ -1,34 +1,17 @@
 import QtQuick 2.0
 import "../"
-import "../Misk"
 
 BasicItem {
     id: clickable
-    
-    property bool checkable: false
-    property bool checked: false
-    property string text: qsTr( "Clickable" )
-    property url icon: iconItem.source
+
+    property alias text: textItem.text
+    property alias icon: iconItem.source
+    property alias textColor: textItem.color
     signal clicked()
 
-    width: contentsRow.width + 30
-    height: contentsRow.height + 10
-    
-    Shadow {
-        color: palette.shadowColor
-    }
+    width: contentsRow.width + 20
+    height: contentsRow.height + 20
 
-    Rectangle {
-        id: background
-        color: mouseArea.pressed || clickable.checked ?
-                   palette.colorBackgroundActive :
-                   palette.colorBackgroundRaised
-        anchors.fill: parent
-        radius: 3
-        smooth: true
-    }
-
-        
     Row {
         id: contentsRow
         spacing: 10
@@ -41,26 +24,23 @@ BasicItem {
         }
 
         Text {
-            text: clickable.text
+            id: textItem
+            text: qsTr( "Ok" )
+            style: Text.Raised
             anchors.verticalCenter: parent.verticalCenter
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
-            color: palette.backgroundTextColor
+            color: clickable.enabled ?
+                       palette.colorBackgroundText :
+                       palette.colorBackgroundTextUnavalible
             smooth: true
-            font.pointSize: 16
+            font.pointSize: 18
         }
     }
-    
+
     MouseArea {
         id: mouseArea
         anchors.fill: parent
-
-        onClicked: {
-            clickable.clicked()
-            
-            if( clickable.checkable ) {
-                clickable.checked = !clickable.checked
-            }
-        }
+        onPressed: clickable.clicked()
     }
 }

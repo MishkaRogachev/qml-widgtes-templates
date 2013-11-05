@@ -18,5 +18,8 @@ OTHER_FILES += \
     qml/Basic/Misk/Palette.qml \
     qml/Basic/Widgets/Widget.qml \
     qml/Basic/Misk/Shadow.qml \
-    qml/Basic/Containers/TabWidget.qml
+    qml/Basic/Containers/TabWidget.qml \
+    qml/Basic/Controls/Switch.qml \
+    qml/Basic/Controls/Slider.qml \
+    qml/Basic/Display/ProgressBar.qml
 
