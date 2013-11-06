@@ -8,24 +8,26 @@ Widget {
     property alias tabsModel: tabRepeater.model
     // modelData must contain url property called "file" and string proprty "text"
 
-    Rectangle {
+    Rectangle { //TODO: refactor to Misk/Separator
         id: verticalSeparator
         anchors.left: tabBar.left
         anchors.right: tabBar.right
         anchors.bottom: tabBar.bottom
         height: 1
-        color: palette.colorBackgroundSunken
+        color: palette.colorBackgroundText
     }
 
     Row {
-        id: tabBar // TODO: refactor in TabBar Item
+        id: tabBar // TODO: refactor in Bars/TabBar
 
         property variant activeTab: tabRepeater.model[activeTabIndex]
         property int activeTabIndex: 0
 
         anchors.top: parent.top
         anchors.left: parent.left
+        anchors.leftMargin: 12
         anchors.right: parent.right
+        anchors.rightMargin: 12
 
         Repeater {
             id: tabRepeater
@@ -59,9 +61,7 @@ Widget {
 
     Loader {
         id: tabContents
-
         source: tabBar.activeTab.file
-
         anchors.top: tabBar.bottom
         anchors.left: parent.left
         anchors.right: parent.right

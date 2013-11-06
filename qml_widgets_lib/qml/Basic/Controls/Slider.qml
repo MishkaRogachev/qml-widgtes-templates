@@ -13,28 +13,15 @@ BasicItem {
     width: bar.width
     height: slideable.height
 
-    Shadow {
-        cornerRadius: slideable.radius
-        anchors.fill: slideable
-    }
-
     ProgressBar {
         id: bar
         anchors.centerIn: parent
     }
 
-    Rectangle {
+    Circle {
         id: slideable
         anchors.verticalCenter: parent.verticalCenter
         x: 0
-        width: 40
-        height: width
-        radius: width / 2
-        antialiasing: true
-        color: palette.colorBackgroundRaised
-        border.width: 1
-        border.color: palette.colorBackgroundNormal
-        opacity: slider.enabled ? 1.00 : 0.35
 
         onXChanged: {
             value = (maxValue - minValue) *
@@ -42,6 +29,7 @@ BasicItem {
         }
 
         MouseArea {
+            id: mouseArea
             anchors.fill: parent
             drag.target: slideable
             drag.axis: Drag.XAxis

@@ -22,5 +22,7 @@ OTHER_FILES += \
     qml/Basic/Controls/Switch.qml \
     qml/Basic/Controls/Slider.qml \
     qml/Basic/Display/ProgressBar.qml \
-    qml/Basic/Controls/Button.qml
+    qml/Basic/Controls/Button.qml \
+    qml/Basic/Misk/Circle.qml \
+    qml/Basic/Misk/Label.qml
 

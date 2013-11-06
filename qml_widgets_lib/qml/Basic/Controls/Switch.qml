@@ -18,50 +18,45 @@ BasicItem {
         anchors.fill: parent
         radius: width / 2
         antialiasing: true
-        color: palette.colorBackgroundSunken
+        color: switchEnabled ? palette.colorActive : "#00000000"
+        border.width: 1
+        border.color: palette.colorBackgroundItem
+        Behavior on color { ColorAnimation { duration: 150 } }
     }
 
-    Shadow {
-        cornerRadius: switchStateIndicator.radius
-        anchors.fill: switchStateIndicator
-    }
-
-    Rectangle {
+    Circle {
         id: switchStateIndicator
         width: switched ? onItem.width : offItem.width
-        height: parent.height - 2
-        radius: height / 2
+        height: parent.height - 4
         anchors.verticalCenter: parent.verticalCenter
-        x: switched ? offItem.width - 1 : 1
-        antialiasing: true
-        color: switchEnabled ?
-                   palette.colorActive :
-                   palette.colorBackgroundRaised
-        border.width: 1
-        border.color: palette.colorBackgroundRaised
-        opacity: switcher.enabled ? 1.00 : 0.35
+        x: switched ? offItem.width - 2 : 2
         Behavior on x { NumberAnimation { duration: 50 } }
-        Behavior on color { ColorAnimation { duration: 100 } }
     }
 
     Row {
         id: switchRow
         anchors.centerIn: parent
 
-        Clickable {
+        Label {
             id: offItem
-            text: "Off"
             anchors.verticalCenter: parent.verticalCenter
-            onClicked: switched = !switched
-            enabled: switcher.enabled
+            color: switched ?
+                       palette.colorBackgroundText :
+                       palette.colorForegroundText
         }
 
-        Clickable {
+        Label {
             id: onItem
-            text: "On"
             anchors.verticalCenter: parent.verticalCenter
-            onClicked: switched = !switched
-            enabled: switcher.enabled
+            color: switched ?
+                       palette.colorForegroundText :
+                       palette.colorBackgroundText
         }
+    }
+
+    MouseArea {
+        id: mouseArea
+        anchors.fill: parent
+        onPressed: switched = !switched
     }
 }

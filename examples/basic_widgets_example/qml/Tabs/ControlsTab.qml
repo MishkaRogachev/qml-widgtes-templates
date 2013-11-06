@@ -17,16 +17,30 @@ Item {
                 spacing: 25
                 anchors.horizontalCenter: parent.horizontalCenter
 
+                Clickable {
+                    text: "Push Me!"
+                }
+
+                Clickable {
+                    text: "Ꙭ"
+                }
+            }
+
+            Row {
+                spacing: 25
+                anchors.horizontalCenter: parent.horizontalCenter
+
                 Switch {}
 
                 Switch {
                     offText: "NO"
                     onText: "YES"
+                    switchEnabled: false
                 }
 
                 Switch {
-                    offText: "0"
-                    onText: "1"
+                    offText: "On"
+                    onText: "Off"
                 }
             }
 
@@ -43,18 +57,18 @@ Item {
 
                 Repeater {
                     model: [
-                        { text: "7" },
-                        { text: "8" },
-                        { text: "9" },
-                        { text: "4" },
-                        { text: "5" },
-                        { text: "6" },
                         { text: "1" },
                         { text: "2" },
                         { text: "3" },
-                        { text: "C" },
-                        { text: "2" },
-                        { text: "<" },
+                        { text: "4" },
+                        { text: "5" },
+                        { text: "6" },
+                        { text: "7" },
+                        { text: "8" },
+                        { text: "9" },
+                        { text: "*" },
+                        { text: "0" },
+                        { text: "#" },
                     ]
 
                     Button {

@@ -1,22 +1,24 @@
 import QtQuick 2.0
+import QtGraphicalEffects 1.0
 import "../"
+import "../Misk"
 
 BasicItem {
     id: clickable
 
     property alias text: textItem.text
     property alias icon: iconItem.source
-    property alias textColor: textItem.color
     property alias pressed: mouseArea.pressed
     signal clicked()
 
-    width: Math.max(contentsRow.width, contentsRow.height) + 20
+    width: Math.max(contentsRow.width, contentsRow.height) + 18
     height: contentsRow.height + 20
 
     Row {
         id: contentsRow
         spacing: 10
         anchors.centerIn: parent
+        visible: !mouseArea.pressed
 
         Image {
             id: iconItem
@@ -24,24 +26,27 @@ BasicItem {
             smooth: true
         }
 
-        Text {
+        Label {
             id: textItem
             text: qsTr( "Ok" )
-            style: Text.Raised
-            anchors.verticalCenter: parent.verticalCenter
-            verticalAlignment: Text.AlignVCenter
-            horizontalAlignment: Text.AlignHCenter
             color: clickable.enabled ?
                        palette.colorBackgroundText :
                        palette.colorBackgroundTextUnavalible
-            smooth: true
-            font.pointSize: 18
         }
+    }
+
+    Glow {
+        anchors.fill: contentsRow
+        radius: 8
+        samples: 16
+        color: palette.colorActive
+        source: contentsRow
+        visible: mouseArea.pressed
     }
 
     MouseArea {
         id: mouseArea
         anchors.fill: parent
-        onPressed: clickable.clicked()
+        onClicked: clickable.clicked()
     }
 }

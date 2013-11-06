@@ -1,19 +1,22 @@
 import QtQuick 2.0
 import "../"
-import "../Misk"
+//import QtGraphicalEffects 1.0
 
 BasicItem {
     id: widget
-
-    Shadow {
-        color: palette.shadowColor
-    }
 
     Rectangle {
         id: background
         color: palette.colorBackgroundNormal
         anchors.fill: parent
         radius: 3
-        smooth: true
+        antialiasing: true
+        //visible: false
     }
+
+//    FastBlur {
+//        anchors.fill: background
+//        source: background
+//        radius: 32
+//    }
 }

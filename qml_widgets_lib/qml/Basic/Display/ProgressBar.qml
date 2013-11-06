@@ -16,24 +16,27 @@ BasicItem {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.verticalCenter: parent.verticalCenter
-        height: 4
-        radius: 3
+        height: 8
+        radius: 4
         antialiasing: true
-        color: palette.colorBackgroundSunken
+        color: palette.colorTransparent
+        border.width: 1
+        border.color: palette.colorBackgroundItem
 
         Rectangle {
             id: fill
             color: palette.colorActive
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
-            height: 4
-            radius: 1
+            anchors.leftMargin: 1
+            height: 6
+            radius: 3
             antialiasing: true
             width: {
                 if (maxValue > minValue) {
                     var pos = (value - minValue) *
-                              (background.width) / (maxValue - minValue);
-                    pos = Math.min(pos, background.width);
+                              (background.width - 2) / (maxValue - minValue);
+                    pos = Math.min(pos, background.width - 2);
                     pos = Math.max(pos, 0);
                     return pos;
                 } else {
