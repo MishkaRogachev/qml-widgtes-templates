@@ -1,15 +1,14 @@
 import QtQuick 2.0
-import QtGraphicalEffects 1.0
 
-RectangularGlow {
+Rectangle {
     id: shadow
+    color: palette.colorTransparent
+    border.width: 3
+    border.color: palette.colorShadow
+    opacity: 0.25
     anchors.fill: parent
-    anchors.topMargin: 3
-    anchors.leftMargin: 3
-    anchors.rightMargin: 2
-    anchors.bottomMargin: 2
-    glowRadius: 4
-    spread: 0.50
+    anchors.rightMargin: -2
+    anchors.bottomMargin: -2
+    radius: height / 2
     antialiasing: true
-    color: palette.colorShadow
 }

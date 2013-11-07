@@ -39,8 +39,8 @@ Item {
                 }
 
                 Switch {
-                    offText: "On"
-                    onText: "Off"
+                    offText: "Off"
+                    onText: "On"
                 }
             }
 

@@ -3,9 +3,7 @@ import QtQuick 2.0
 Item {
     id: palette
 
-    property color colorBackgroundNormal: "#cc000000"
-    property color colorBackgroundRaised: "#485660"
-    property color colorBackgroundSunken: "#000000"
+    property color colorBackgroundNormal: "#cc001017"
     property color colorBackgroundText: "#FFFFFF"
     property color colorBackgroundItem: "#EFEFEF"
 

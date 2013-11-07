@@ -5,63 +5,18 @@ import "../Controls"
 Widget {
     id: tabWidget
 
-    property alias tabsModel: tabRepeater.model
-    // modelData must contain url property called "file" and string proprty "text"
+    property alias tabsModel: tabBar.model
+    //model item must contain url "file" and string "text" or url "icon"
 
-    Rectangle { //TODO: refactor to Misk/Separator
-        id: verticalSeparator
-        anchors.left: tabBar.left
-        anchors.right: tabBar.right
-        anchors.bottom: tabBar.bottom
-        height: 1
-        color: palette.colorBackgroundText
-    }
-
-    Row {
-        id: tabBar // TODO: refactor in Bars/TabBar
-
-        property variant activeTab: tabRepeater.model[activeTabIndex]
-        property int activeTabIndex: 0
-
+    Bar {
+        id: tabBar
         anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.leftMargin: 12
-        anchors.right: parent.right
-        anchors.rightMargin: 12
-
-        Repeater {
-            id: tabRepeater
-
-            Item {
-                id: tabItem
-                width: tabBar.width / tabRepeater.count
-                height: tabClickable.height
-
-                Clickable {
-                    id: tabClickable
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.verticalCenter: parent.verticalCenter
-                    text: modelData.text
-                    onClicked: tabBar.activeTabIndex = index
-                }
-
-                Rectangle {
-                    id: tabItemHighlight
-                    anchors.left: tabItem.left
-                    anchors.right: tabItem.right
-                    anchors.bottom: tabItem.bottom
-                    height: 5
-                    color: palette.colorActive
-                    visible: tabBar.activeTabIndex === index
-                }
-            }
-        }
+        anchors.margins: 10
     }
 
     Loader {
         id: tabContents
-        source: tabBar.activeTab.file
+        source: tabBar.activeItem.file
         anchors.top: tabBar.bottom
         anchors.left: parent.left
         anchors.right: parent.right

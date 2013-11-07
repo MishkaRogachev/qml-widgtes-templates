@@ -8,6 +8,8 @@ Text {
     anchors.verticalCenter: parent.verticalCenter
     width: Math.max(contentWidth, contentHeight) + 18
     height: contentHeight + 20
+    styleColor: "#75000000"
+    style: Text.Raised
     antialiasing: true
-    font.pointSize: 18
+    font.pointSize: 21
 }

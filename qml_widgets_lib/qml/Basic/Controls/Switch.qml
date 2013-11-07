@@ -13,15 +13,11 @@ BasicItem {
     width: switchRow.width
     height: switchRow.height
 
-    Rectangle {
+    Bordered {
         id: background
         anchors.fill: parent
-        radius: width / 2
         antialiasing: true
-        color: switchEnabled ? palette.colorActive : "#00000000"
-        border.width: 1
-        border.color: palette.colorBackgroundItem
-        Behavior on color { ColorAnimation { duration: 150 } }
+        selected: switchEnabled
     }
 
     Circle {

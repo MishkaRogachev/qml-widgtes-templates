@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import "../"
+import "../Misk"
 
 BasicItem {
     id: progressBar
@@ -11,17 +12,13 @@ BasicItem {
     width: 325
     height: background.height
 
-    Rectangle {
+    Bordered {
         id: background
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.verticalCenter: parent.verticalCenter
         height: 8
-        radius: 4
         antialiasing: true
-        color: palette.colorTransparent
-        border.width: 1
-        border.color: palette.colorBackgroundItem
 
         Rectangle {
             id: fill

@@ -12,5 +12,7 @@
         <file>qml/Basic/Controls/Button.qml</file>
         <file>qml/Basic/Misk/Circle.qml</file>
         <file>qml/Basic/Misk/Label.qml</file>
+        <file>qml/Basic/Controls/Bar.qml</file>
+        <file>qml/Basic/Misk/Bordered.qml</file>
     </qresource>
 </RCC>

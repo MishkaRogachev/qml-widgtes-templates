@@ -2,19 +2,18 @@ import QtQuick 2.0
 import "../"
 
 BasicItem {
-    id: circle
+    id: bordered
 
-    width: 40
-    height: width
+    property bool selected: false
 
     Shadow {}
 
     Rectangle {
-        id: item
+        id: background
         anchors.fill: parent
-        radius: width / 2
+        radius: height / 2
         antialiasing: true
-        color: palette.colorBackgroundItem
+        color: bordered.selected ? palette.colorActive : "#00000000"
         border.width: 1
         border.color: palette.colorBackgroundItem
     }

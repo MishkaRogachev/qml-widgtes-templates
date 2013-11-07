@@ -9,7 +9,6 @@ BasicItem {
         id: background
         color: palette.colorBackgroundNormal
         anchors.fill: parent
-        radius: 3
         antialiasing: true
         //visible: false
     }

@@ -24,5 +24,7 @@ OTHER_FILES += \
     qml/Basic/Display/ProgressBar.qml \
     qml/Basic/Controls/Button.qml \
     qml/Basic/Misk/Circle.qml \
-    qml/Basic/Misk/Label.qml
+    qml/Basic/Misk/Label.qml \
+    qml/Basic/Controls/Bar.qml \
+    qml/Basic/Misk/Bordered.qml
 

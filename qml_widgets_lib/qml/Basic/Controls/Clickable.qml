@@ -1,5 +1,4 @@
 import QtQuick 2.0
-import QtGraphicalEffects 1.0
 import "../"
 import "../Misk"
 
@@ -11,14 +10,13 @@ BasicItem {
     property alias pressed: mouseArea.pressed
     signal clicked()
 
-    width: Math.max(contentsRow.width, contentsRow.height) + 18
-    height: contentsRow.height + 20
+    width: Math.max(contentsRow.width, contentsRow.height)
+    height: contentsRow.height
 
     Row {
         id: contentsRow
         spacing: 10
         anchors.centerIn: parent
-        visible: !mouseArea.pressed
 
         Image {
             id: iconItem
@@ -32,16 +30,8 @@ BasicItem {
             color: clickable.enabled ?
                        palette.colorBackgroundText :
                        palette.colorBackgroundTextUnavalible
+            font.underline: mouseArea.pressed
         }
-    }
-
-    Glow {
-        anchors.fill: contentsRow
-        radius: 8
-        samples: 16
-        color: palette.colorActive
-        source: contentsRow
-        visible: mouseArea.pressed
     }
 
     MouseArea {
