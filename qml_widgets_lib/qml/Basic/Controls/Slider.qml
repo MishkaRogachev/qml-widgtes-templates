@@ -16,12 +16,14 @@ BasicItem {
     ProgressBar {
         id: bar
         anchors.centerIn: parent
+        palette: slider.palette
     }
 
     Circle {
         id: slideable
         anchors.verticalCenter: parent.verticalCenter
         x: 0
+        palette: slider.palette
 
         onXChanged: {
             value = (maxValue - minValue) *

@@ -4,7 +4,8 @@ Item {
     id: palette
 
     property color colorBackgroundNormal: "#cc001017"
-    property color colorBackgroundText: "#FFFFFF"
+    property color colorBackgroundTextPrimary: "#FFFFFF"
+    property color colorBackgroundTextSecondary: "#FFFFFF"
     property color colorBackgroundItem: "#EFEFEF"
 
     property color colorForegroundText: "#000000"

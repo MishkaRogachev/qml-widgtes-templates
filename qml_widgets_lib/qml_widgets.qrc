@@ -5,7 +5,6 @@
         <file>qml/Basic/Misk/Palette.qml</file>
         <file>qml/Basic/Widgets/Widget.qml</file>
         <file>qml/Basic/Misk/Shadow.qml</file>
-        <file>qml/Basic/Containers/TabWidget.qml</file>
         <file>qml/Basic/Controls/Switch.qml</file>
         <file>qml/Basic/Controls/Slider.qml</file>
         <file>qml/Basic/Display/ProgressBar.qml</file>
@@ -14,5 +13,6 @@
         <file>qml/Basic/Misk/Label.qml</file>
         <file>qml/Basic/Controls/Bar.qml</file>
         <file>qml/Basic/Misk/Bordered.qml</file>
+        <file>qml/Basic/Containers/TabContainer.qml</file>
     </qresource>
 </RCC>

@@ -1,22 +1,23 @@
 import QtQuick 2.0
-import "../Widgets"
+import "../"
 import "../Controls"
 
-Widget {
+BasicItem {
     id: tabWidget
 
     property alias tabsModel: tabBar.model
-    //model item must contain url "file" and string "text" or url "icon"
+    // model item: url "source" and (string "text" or/and url "icon")
 
     Bar {
         id: tabBar
         anchors.top: parent.top
         anchors.margins: 10
+        palette: tabWidget.palette
     }
 
     Loader {
         id: tabContents
-        source: tabBar.activeItem.file
+        source: tabBar.activeItem.source ? tabBar.activeItem.source : ""
         anchors.top: tabBar.bottom
         anchors.left: parent.left
         anchors.right: parent.right

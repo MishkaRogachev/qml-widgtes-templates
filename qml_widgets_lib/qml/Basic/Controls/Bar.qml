@@ -6,7 +6,7 @@ BasicItem {
     id: bar
 
     property alias model: repeater.model
-    //model item must contain string "text" or url "icon"
+    // model item: (string "text" or/and url "icon")
     property variant activeItem: repeater.model[activeItemIndex]
     property int activeItemIndex: -1
 
@@ -17,6 +17,7 @@ BasicItem {
     Bordered {
         id: background
         anchors.fill: parent
+        palette: bar.palette
 
         Item {
             id: leftClipItem
@@ -62,6 +63,7 @@ BasicItem {
                     text: modelData.text ? modelData.text : ""
                     icon: modelData.icon ? modelData.icon : ""
                     onClicked: activeItemIndex = index
+                    palette: bar.palette
                 }
             }
         }

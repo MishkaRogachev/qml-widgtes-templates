@@ -20,10 +20,6 @@ Item {
                 Clickable {
                     text: "Push Me!"
                 }
-
-                Clickable {
-                    text: "Ꙭ"
-                }
             }
 
             Row {

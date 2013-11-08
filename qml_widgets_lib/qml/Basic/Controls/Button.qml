@@ -9,5 +9,6 @@ Clickable {
         anchors.fill: parent
         z: -1
         selected: button.pressed
+        palette: button.palette
     }
 }

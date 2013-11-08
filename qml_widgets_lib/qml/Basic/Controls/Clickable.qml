@@ -27,10 +27,7 @@ BasicItem {
         Label {
             id: textItem
             text: qsTr( "Ok" )
-            color: clickable.enabled ?
-                       palette.colorBackgroundText :
-                       palette.colorBackgroundTextUnavalible
-            font.underline: mouseArea.pressed
+            color: palette.colorBackgroundTextPrimary
         }
     }
 
