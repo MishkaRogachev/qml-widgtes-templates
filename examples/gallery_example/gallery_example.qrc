@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/Tabs/Controls.qml</file>
+        <file>qml/gallery_example.qml</file>
+    </qresource>
+</RCC>

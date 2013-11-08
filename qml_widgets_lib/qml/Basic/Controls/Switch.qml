@@ -18,6 +18,7 @@ BasicItem {
         anchors.fill: parent
         antialiasing: true
         selected: switchEnabled
+        palette: switcher.palette
     }
 
     Circle {
@@ -27,6 +28,7 @@ BasicItem {
         anchors.verticalCenter: parent.verticalCenter
         x: switched ? offItem.width - 2 : 2
         Behavior on x { NumberAnimation { duration: 50 } }
+        palette: switcher.palette
     }
 
     Row {
@@ -37,7 +39,7 @@ BasicItem {
             id: offItem
             anchors.verticalCenter: parent.verticalCenter
             color: switched ?
-                       palette.colorBackgroundText :
+                       palette.colorBackgroundTextPrimary :
                        palette.colorForegroundText
         }
 
@@ -46,7 +48,7 @@ BasicItem {
             anchors.verticalCenter: parent.verticalCenter
             color: switched ?
                        palette.colorForegroundText :
-                       palette.colorBackgroundText
+                       palette.colorBackgroundTextPrimary
         }
     }
 

@@ -12,4 +12,5 @@ Text {
     style: Text.Raised
     antialiasing: true
     font.pointSize: 21
+    color: palette.colorBackgroundTextSecondary
 }

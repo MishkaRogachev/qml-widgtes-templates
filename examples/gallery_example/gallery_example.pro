@@ -17,12 +17,11 @@ DEPENDPATH += $$PWD/../qml_widgets_lib
 
 
 SOURCES += \
-    basic_widgets_example.cpp
+    gallery_example.cpp
 
 OTHER_FILES += \
-    qml/basic_widgets_example.qml \
-    qml/Tabs/ControlsTab.qml \
-    qml/Tabs/AboutTab.qml
+    qml/Tabs/Controls.qml \
+    qml/gallery_example.qml
 
 RESOURCES += \
-    basic_widgets_example.qrc
+    gallery_example.qrc

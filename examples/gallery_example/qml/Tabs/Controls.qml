@@ -11,6 +11,8 @@ Item {
         anchors.margins: 25
 
         Column {
+            width: parent.width / 2
+            anchors.verticalCenter: parent.verticalCenter
             spacing: 25
 
             Row {
@@ -21,8 +23,18 @@ Item {
                     text: "Push Me!"
                 }
 
-                Clickable {
-                    text: "Ꙭ"
+                MenuClickable {
+                    text: "Menu"
+
+                    menu.model: [
+                        { text: "Copy",     type: "simple" },
+                        { text: "Paste",    type: "simple" },
+                        { text: "Cut",      type: "simple" },
+                        { text: "Delete",   type: "simple" },
+                        { type: "separator" },
+                        { text: "Settings", type: "menu" },
+                        { text: "About",    type: "simple" },
+                    ]
                 }
             }
 
@@ -76,6 +88,12 @@ Item {
                     }
                 }
             }
+        }
+
+        Column {
+            width: parent.width / 2
+            anchors.verticalCenter: parent.verticalCenter
+            spacing: 25
         }
     }
 }
