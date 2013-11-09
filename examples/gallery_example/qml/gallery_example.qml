@@ -8,6 +8,7 @@ Rectangle {
 
     Rectangle {
         id: animatedBackground
+        anchors.fill: parent
         gradient: Gradient {
             GradientStop {
                 position: 0.00;
@@ -29,8 +30,7 @@ Rectangle {
                 position: 1.00;
                 color: "#0d537c";
             }
-        }
-        anchors.fill: parent
+        }  
     }
 
     Widget {
