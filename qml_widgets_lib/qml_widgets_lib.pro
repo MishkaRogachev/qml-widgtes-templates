@@ -31,5 +31,6 @@ OTHER_FILES += \
     qml/Basic/Misk/HorizontalSeparator.qml \
     qml/Basic/Controls/MenuClickable.qml \
     qml/Basic/Controls/LineEdit.qml \
-    qml/Basic/Misk/ForegroundItem.qml
+    qml/Basic/Misk/ForegroundItem.qml \
+    qml/Basic/Display/Led.qml
 

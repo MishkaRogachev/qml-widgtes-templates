@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import "../Basic/Widgets"
 import "../Basic/Controls"
+import "../Basic/Display"
 import "../Basic/Misk"
 
 Item {
@@ -47,20 +48,38 @@ Item {
                     spacing: 10
                     anchors.right: parent.right
 
-                    Label { text: "Login:" }
+                    Label {
+                        text: "Login:"
+                    }
 
-                    LineEdit { width: 200 }
+                    LineEdit {
+                        id: loginEdit
+                        width: 200
+                    }
+
+                    Led {
+                        anchors.verticalCenter: parent.verticalCenter
+                        active : loginEdit.textInput.length > 5
+                    }
                 }
 
                 Row {
                     spacing: 10
                     anchors.right: parent.right
 
-                    Label { text: "Password:" }
+                    Label {
+                        text: "Password:"
+                    }
 
                     LineEdit {
+                        id: passwordEdit
                         width: 200
                         textInput.echoMode: TextInput.Password
+                    }
+
+                    Led {
+                        anchors.verticalCenter: parent.verticalCenter
+                        active : passwordEdit.textInput.length > 3
                     }
                 }
             }
@@ -121,6 +140,13 @@ Item {
             width: parent.width / 2
             anchors.verticalCenter: parent.verticalCenter
             spacing: 25
+
+
+            //CheckBoxes
+
+            //RadioButtons
+
+            //TextEdit
         }
     }
 }
