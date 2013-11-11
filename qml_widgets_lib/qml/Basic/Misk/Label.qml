@@ -9,6 +9,6 @@ Text {
     width: Math.max(contentWidth, contentHeight) + 15
     height: contentHeight + 15
     antialiasing: true
-    font.pointSize: 21
+    font.pointSize: 18
     color: palette.colorBackgroundTextSecondary
 }

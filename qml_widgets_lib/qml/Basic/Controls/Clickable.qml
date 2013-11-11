@@ -30,6 +30,7 @@ BasicItem {
             id: textItem
             text: qsTr( "Ok" )
             color: palette.colorBackgroundText
+            font.pointSize: 21
         }
 
     }

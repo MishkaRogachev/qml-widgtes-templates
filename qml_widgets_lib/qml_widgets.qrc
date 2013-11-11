@@ -17,5 +17,7 @@
         <file>qml/Basic/Widgets/Menu.qml</file>
         <file>qml/Basic/Misk/HorizontalSeparator.qml</file>
         <file>qml/Basic/Controls/MenuClickable.qml</file>
+        <file>qml/Basic/Controls/LineEdit.qml</file>
+        <file>qml/Basic/Misk/ForegroundItem.qml</file>
     </qresource>
 </RCC>

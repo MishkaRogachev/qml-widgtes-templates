@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import "../Basic/Widgets"
 import "../Basic/Controls"
+import "../Basic/Misk"
 
 Item {
     id: controlsTab
@@ -15,26 +16,52 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             spacing: 25
 
-            Row {
-                spacing: 25
-                anchors.horizontalCenter: parent.horizontalCenter
+//            Row {
+//                spacing: 25
+//                anchors.horizontalCenter: parent.horizontalCenter
 
-                Clickable {
-                    text: "Push Me!"
+//                Clickable {
+//                    text: "Push Me!"
+//                }
+
+//                MenuClickable {
+//                    text: "Menu"
+
+//                    menu.model: [
+//                        { text: "Copy",     type: "simple" },
+//                        { text: "Paste",    type: "simple" },
+//                        { text: "Cut",      type: "simple" },
+//                        { text: "Delete",   type: "simple" },
+//                        { type: "separator" },
+//                        { text: "Settings", type: "menu" },
+//                        { text: "About",    type: "simple" },
+//                    ]
+//                }
+//            }
+
+            Column {
+                anchors.horizontalCenter: parent.horizontalCenter
+                spacing: 10
+
+                Row {
+                    spacing: 10
+                    anchors.right: parent.right
+
+                    Label { text: "Login:" }
+
+                    LineEdit { width: 200 }
                 }
 
-                MenuClickable {
-                    text: "Menu"
+                Row {
+                    spacing: 10
+                    anchors.right: parent.right
 
-                    menu.model: [
-                        { text: "Copy",     type: "simple" },
-                        { text: "Paste",    type: "simple" },
-                        { text: "Cut",      type: "simple" },
-                        { text: "Delete",   type: "simple" },
-                        { type: "separator" },
-                        { text: "Settings", type: "menu" },
-                        { text: "About",    type: "simple" },
-                    ]
+                    Label { text: "Password:" }
+
+                    LineEdit {
+                        width: 200
+                        textInput.echoMode: TextInput.Password
+                    }
                 }
             }
 

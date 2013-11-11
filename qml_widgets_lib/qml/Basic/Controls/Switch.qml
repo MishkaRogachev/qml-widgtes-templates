@@ -41,6 +41,7 @@ BasicItem {
             color: switched ?
                        palette.colorBackgroundText :
                        palette.colorForegroundText
+            font.pointSize: 21
         }
 
         Label {
@@ -49,6 +50,7 @@ BasicItem {
             color: switched ?
                        palette.colorForegroundText :
                        palette.colorBackgroundText
+            font.pointSize: 21
         }
     }
 

@@ -29,5 +29,7 @@ OTHER_FILES += \
     qml/Basic/Containers/TabContainer.qml \
     qml/Basic/Widgets/Menu.qml \
     qml/Basic/Misk/HorizontalSeparator.qml \
-    qml/Basic/Controls/MenuClickable.qml
+    qml/Basic/Controls/MenuClickable.qml \
+    qml/Basic/Controls/LineEdit.qml \
+    qml/Basic/Misk/ForegroundItem.qml
 
