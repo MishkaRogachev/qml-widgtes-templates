@@ -10,6 +10,6 @@ BasicItem {
     Rectangle {
         anchors.fill: parent
         anchors.margins: 5
-        color: palette.colorBackgroundItem
+        color: palette.colorItem
     }
 }

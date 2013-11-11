@@ -6,8 +6,11 @@ Widget {
     id: menu
 
     property alias model: repeater.model
-    // model item: string "type"("simple", "check", "separator", "menu")
-    // and (string "text" or/and url "icon")
+    signal accepted(string id)
+    // model item:
+    // string "type"("simple", "separator")
+    // string "text" or/and url "icon"
+    // string id
 
     width: column.width
     height: column.height
@@ -25,17 +28,21 @@ Widget {
                     switch(modelData.type) {
                     case "simple":
                         return simpleComponent
-                    case "check":
-                        return checkComponent
                     case "separator":
                         return separatorComponent
-                    case "menu":
-                        return menuComponent
                     }
                 }
                 onLoaded: {
-                    if (modelData.text) loader.item.text = modelData.text;
+                    if (modelData.text) {
+                        loader.item.text = modelData.text;
+                    }
                     loader.item.palette = palette;
+                    if (loader.item.clicked) {
+                        loader.item.clicked.connect(loader.clicked);
+                    }
+                }
+                function clicked() {
+                    menu.accepted(modelData.id)
                 }
             }
         }
@@ -44,17 +51,7 @@ Widget {
     Component {
         id: simpleComponent
 
-        Clickable {
-
-        }
-    }
-
-    Component {
-        id: checkComponent
-
-        Clickable {
-
-        }
+        Clickable { }
     }
 
     Component {
@@ -62,13 +59,6 @@ Widget {
 
         HorizontalSeparator {
             width: column.width
-        }
-    }
-
-    Component {
-        id: menuComponent
-
-        Clickable {
         }
     }
 }

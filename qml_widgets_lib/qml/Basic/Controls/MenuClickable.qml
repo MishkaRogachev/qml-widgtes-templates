@@ -1,29 +1,18 @@
 import QtQuick 2.0
 import "../Widgets"
+import "../Misk"
 
 Clickable {
     id: menuClickable
 
     property alias menuVisible: menu.visible
 
-    Item {
-        id: clipper
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 10
-        anchors.right: parent.right
-        anchors.rightMargin: 2
-        width: 11
-        height: 11
-        clip: true
-
-        Rectangle {
-            anchors.fill: parent
-            anchors.topMargin: -2
-            anchors.leftMargin: -2
-            color: palette.colorTransparent
-            border.width: 2
-            border.color: palette.colorBackgroundItem
-        }
+    Rectangle {
+        id: background
+        anchors.fill: parent
+        visible: menu.visible
+        color: palette.colorBackground
+        z:-1
     }
 
     property Menu menu: Menu {
@@ -32,8 +21,9 @@ Clickable {
         anchors.left: parent.left
         anchors.leftMargin: menuClickable.absoluteX
         anchors.top: parent.top
-        anchors.topMargin: menuClickable.absoluteY + menuClickable.height
+        anchors.topMargin: menuClickable.absoluteY + menuClickable.height + 1
         visible: false
+        onAccepted: menuVisible = !menuVisible
     }
 
     onClicked: menuVisible = !menuVisible

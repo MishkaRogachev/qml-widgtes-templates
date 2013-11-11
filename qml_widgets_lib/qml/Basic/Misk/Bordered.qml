@@ -15,6 +15,6 @@ BasicItem {
         antialiasing: true
         color: bordered.selected ? palette.colorActive : "#00000000"
         border.width: 1
-        border.color: palette.colorBackgroundItem
+        border.color: palette.colorActive
     }
 }

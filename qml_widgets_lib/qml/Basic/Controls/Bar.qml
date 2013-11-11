@@ -22,12 +22,14 @@ BasicItem {
         Item {
             id: leftClipItem
             clip: true
+            antialiasing: true
             anchors.fill: parent
             anchors.leftMargin: repeater.activeItem ? repeater.activeItem.x : 1
 
             Item {
                 id: rightClipItem
                 clip: true
+                antialiasing: true
                 anchors.fill: parent
                 anchors.rightMargin: repeater.activeItem ?
                                          row.width - repeater.activeItem.x -
@@ -36,10 +38,10 @@ BasicItem {
                 Rectangle {
                     id: highlight
                     anchors.fill: parent
-                    anchors.topMargin: 1
-                    anchors.bottomMargin: 1
-                    anchors.leftMargin: -leftClipItem.anchors.leftMargin + 1
-                    anchors.rightMargin: -rightClipItem.anchors.rightMargin + 1
+                    anchors.topMargin: 0
+                    anchors.bottomMargin: 0
+                    anchors.leftMargin: -leftClipItem.anchors.leftMargin + 0
+                    anchors.rightMargin: -rightClipItem.anchors.rightMargin + 0
                     color: palette.colorActive
                     antialiasing: true
                     radius: height / 2

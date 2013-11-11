@@ -4,7 +4,7 @@ import "../"
 BasicItem {
     id: circle
 
-    width: 40
+    width: 50
     height: width
 
     Shadow {}
@@ -14,8 +14,8 @@ BasicItem {
         anchors.fill: parent
         radius: width / 2
         antialiasing: true
-        color: palette.colorBackgroundItem
+        color: palette.colorItem
         border.width: 1
-        border.color: palette.colorBackgroundItem
+        border.color: palette.colorItem
     }
 }

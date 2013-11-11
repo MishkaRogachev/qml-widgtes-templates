@@ -6,8 +6,9 @@ BasicItem {
 
     Rectangle {
         id: background
-        color: palette.colorBackgroundNormal
+        color: palette.colorBackground
         anchors.fill: parent
         antialiasing: true
+        radius: 5
     }
 }

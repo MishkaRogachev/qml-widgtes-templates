@@ -5,7 +5,6 @@ Rectangle {
     color: palette.colorTransparent
     border.width: 3
     border.color: palette.colorShadow
-    opacity: 0.25
     anchors.fill: parent
     anchors.rightMargin: -2
     anchors.bottomMargin: -2

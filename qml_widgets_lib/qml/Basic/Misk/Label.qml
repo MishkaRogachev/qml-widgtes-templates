@@ -6,10 +6,8 @@ Text {
     verticalAlignment: Text.AlignVCenter
     horizontalAlignment: Text.AlignHCenter
     anchors.verticalCenter: parent.verticalCenter
-    width: Math.max(contentWidth, contentHeight) + 18
-    height: contentHeight + 20
-    styleColor: "#75000000"
-    style: Text.Raised
+    width: Math.max(contentWidth, contentHeight) + 15
+    height: contentHeight + 15
     antialiasing: true
     font.pointSize: 21
     color: palette.colorBackgroundTextSecondary

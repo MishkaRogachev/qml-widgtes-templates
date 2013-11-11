@@ -24,9 +24,9 @@ BasicItem {
     Circle {
         id: switchStateIndicator
         width: switched ? onItem.width : offItem.width
-        height: parent.height - 4
+        height: parent.height
         anchors.verticalCenter: parent.verticalCenter
-        x: switched ? offItem.width - 2 : 2
+        x: switched ? offItem.width : 0
         Behavior on x { NumberAnimation { duration: 50 } }
         palette: switcher.palette
     }
@@ -39,7 +39,7 @@ BasicItem {
             id: offItem
             anchors.verticalCenter: parent.verticalCenter
             color: switched ?
-                       palette.colorBackgroundTextPrimary :
+                       palette.colorBackgroundText :
                        palette.colorForegroundText
         }
 
@@ -48,7 +48,7 @@ BasicItem {
             anchors.verticalCenter: parent.verticalCenter
             color: switched ?
                        palette.colorForegroundText :
-                       palette.colorBackgroundTextPrimary
+                       palette.colorBackgroundText
         }
     }
 
