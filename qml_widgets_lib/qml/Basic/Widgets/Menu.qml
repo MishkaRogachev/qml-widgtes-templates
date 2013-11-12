@@ -7,10 +7,6 @@ Widget {
 
     property alias menuModel: repeater.model
     signal accepted(string id)
-    // model item:
-    // string "type"("simple", "separator")
-    // string "text" or/and url "icon"
-    // string id
 
     width: column.width
     height: column.height

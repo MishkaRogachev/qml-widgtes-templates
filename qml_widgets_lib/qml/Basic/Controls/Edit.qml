@@ -3,11 +3,11 @@ import "../"
 import "../Misk"
 
 BasicItem {
-    id: lineEdit
+    id: edit
 
-    property TextInput textItem: TextInput {
-        parent: lineEdit
-        width: lineEdit.width
+    property TextEdit textItem: TextEdit {
+        parent: edit
+        width: edit.width
         anchors.centerIn: parent
         horizontalAlignment: Text.AlignHCenter
         antialiasing: true

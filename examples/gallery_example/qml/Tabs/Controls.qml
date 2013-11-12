@@ -60,7 +60,7 @@ Item {
 
                     Led {
                         anchors.verticalCenter: parent.verticalCenter
-                        active : loginEdit.textInput.length > 5
+                        active : loginEdit.textItem.length > 5
                     }
                 }
 
@@ -75,12 +75,12 @@ Item {
                     LineEdit {
                         id: passwordEdit
                         width: 200
-                        textInput.echoMode: TextInput.Password
+                        textItem.echoMode: TextInput.Password
                     }
 
                     Led {
                         anchors.verticalCenter: parent.verticalCenter
-                        active : passwordEdit.textInput.length > 3
+                        active : passwordEdit.textItem.length > 3
                     }
                 }
             }
@@ -145,13 +145,20 @@ Item {
             RadioGroup {
                 id: radioGroup
                 width: parent.width
+                anchors.horizontalCenter: parent.horizontalCenter
                 radioGroupModel: [
-                    { text: "Left", checked: true },
-                    { text: "Middle", checked: false },
-                    { text: "Right", checked: false }
+                    { role: Text.AlignLeft, text: "Left", checked: true },
+                    { role: Text.AlignHCenter, text: "Middle", checked: false },
+                    { role: Text.AlignRight, text: "Right", checked: false }
                 ]
             }
-
+            Edit {
+                textItem.horizontalAlignment: radioGroup.selectedItem.role
+                textItem.text: "With fainting soul athirst for Grace,
+I wandered in a desert place,
+And at the crossing of the ways
+I saw a sixfold Seraph blaze..."
+            }
 
             //CheckBoxes
 

@@ -6,7 +6,6 @@ BasicItem {
     id: bar
 
     property alias barModel: repeater.model
-    // model item: (string "text" or/and url "icon")
     property variant selectedItem: repeater.model[selectedItemIndex]
     property int selectedItemIndex: -1
 

@@ -34,5 +34,6 @@ OTHER_FILES += \
     qml/Basic/Misk/ForegroundItem.qml \
     qml/Basic/Display/Led.qml \
     qml/Basic/Controls/RadioButton.qml \
-    qml/Basic/Groups/RadioGroup.qml
+    qml/Basic/Groups/RadioGroup.qml \
+    qml/Basic/Controls/Edit.qml
 

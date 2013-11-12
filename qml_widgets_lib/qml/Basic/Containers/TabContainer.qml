@@ -6,7 +6,6 @@ BasicItem {
     id: tabWidget
 
     property alias tabsModel: tabBar.barModel
-    // model item: url "source" and (string "text" or/and url "icon")
 
     Bar {
         id: tabBar
