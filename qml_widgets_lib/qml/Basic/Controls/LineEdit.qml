@@ -12,6 +12,7 @@ BasicItem {
         horizontalAlignment: Text.AlignHCenter
         antialiasing: true
         font.pointSize: 21
+        readOnly: !parent.enabled
     }
 
     width: textItem.contentWidth + 15

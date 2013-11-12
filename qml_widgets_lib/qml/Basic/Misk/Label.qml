@@ -5,7 +5,7 @@ Text {
     id: label
     verticalAlignment: Text.AlignVCenter
     horizontalAlignment: Text.AlignHCenter
-    anchors.verticalCenter: parent.verticalCenter
+    //anchors.verticalCenter: parent.verticalCenter
     width: Math.max(contentWidth, contentHeight) + 15
     height: contentHeight + 15
     antialiasing: true
