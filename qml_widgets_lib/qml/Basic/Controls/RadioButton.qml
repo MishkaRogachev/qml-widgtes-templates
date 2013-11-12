@@ -15,12 +15,14 @@ BasicItem {
         anchors.fill: parent
     }
 
-    Bordered {
+    Rectangle {
         id: fill
         anchors.fill: parent
-        anchors.margins: parent.width / 4
-        selected: true
+        anchors.margins: parent.width / 3
+        radius: height / 2
+        color: palette.colorItem
         visible: false
+        antialiasing: true
     }
 
     MouseArea {

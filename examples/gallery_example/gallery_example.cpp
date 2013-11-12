@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
     QFont font;
-    font.setFamily( "Roboto Condensed" );
+    font.setFamily( "Roboto" );
     font.setWeight(25);
     app.setFont( font );
     QQuickView view;

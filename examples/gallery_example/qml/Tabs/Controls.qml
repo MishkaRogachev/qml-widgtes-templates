@@ -18,29 +18,6 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             spacing: 25
 
-//            Row {
-//                spacing: 25
-//                anchors.horizontalCenter: parent.horizontalCenter
-
-//                Clickable {
-//                    text: "Push Me!"
-//                }
-
-//                MenuClickable {
-//                    text: "Menu"
-
-//                    menu.model: [
-//                        { text: "Copy",     type: "simple" },
-//                        { text: "Paste",    type: "simple" },
-//                        { text: "Cut",      type: "simple" },
-//                        { text: "Delete",   type: "simple" },
-//                        { type: "separator" },
-//                        { text: "Settings", type: "menu" },
-//                        { text: "About",    type: "simple" },
-//                    ]
-//                }
-//            }
-
             Column {
                 anchors.horizontalCenter: parent.horizontalCenter
                 spacing: 10
@@ -58,15 +35,19 @@ Item {
                         width: 200
                     }
 
-                    Led {
-                        anchors.verticalCenter: parent.verticalCenter
-                        active : loginEdit.textItem.length > 5
+                    Label {
+                        width: 12
+                        text : loginEdit.textItem.length > 3 ? "✔" : "✖"
+                        color: loginEdit.textItem.length > 3 ?
+                                   "LightGreen " :
+                                   "LightCoral"
                     }
                 }
 
                 Row {
                     spacing: 10
                     anchors.right: parent.right
+                    anchors.rightMargin: 22
 
                     Label {
                         text: "Password:"
@@ -77,35 +58,29 @@ Item {
                         width: 200
                         textItem.echoMode: TextInput.Password
                     }
+                }
 
-                    Led {
-                        anchors.verticalCenter: parent.verticalCenter
-                        active : passwordEdit.textItem.length > 3
-                    }
+                ProgressBar {
+                    value: passwordEdit.textItem.length
+                    maxValue: 7
+                    width: passwordEdit.width
+                    anchors.right: parent.right
+                    anchors.rightMargin: 22
                 }
             }
 
             Row {
-                spacing: 25
+                spacing: 27
                 anchors.horizontalCenter: parent.horizontalCenter
+                anchors.horizontalCenterOffset: 75
 
-                Switch {}
-
-                Switch {
-                    offText: "NO"
-                    onText: "YES"
-                    switchEnabled: false
+                Clickable {
+                    text: "Ok"
                 }
 
-                Switch {
-                    offText: "Off"
-                    onText: "On"
+                Clickable {
+                    text: "Cancel"
                 }
-            }
-
-            Slider {
-                id: slider
-                anchors.horizontalCenter: parent.horizontalCenter
             }
 
             Grid {
@@ -143,6 +118,29 @@ Item {
             spacing: 25
 
             Row {
+                spacing: 25
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Switch {}
+
+                Switch {
+                    offText: "NO"
+                    onText: "YES"
+                    switchEnabled: false
+                }
+
+                Switch {
+                    offText: "Off"
+                    onText: "On"
+                }
+            }
+
+            Slider {
+                id: slider
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Row {
                 spacing: 10
                 anchors.horizontalCenter: parent.horizontalCenter
 
@@ -158,6 +156,7 @@ Item {
 
                 CheckBox {
                     id: wrapCheckBox
+                    checked: true
                     anchors.verticalCenter: parent.verticalCenter
                 }
 
@@ -178,7 +177,7 @@ Item {
             }
 
             Edit {
-                width: parent.width
+                width: parent.width / 1.5
                 anchors.horizontalCenter: parent.horizontalCenter
                 textItem.horizontalAlignment: radioGroup.selectedItem.role
                 textItem.font.capitalization: capCheckBox.checked ?

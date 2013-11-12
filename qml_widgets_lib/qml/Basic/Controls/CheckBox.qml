@@ -38,6 +38,7 @@ BasicItem {
     }
 
     MouseArea {
+        id: mouseArea
         anchors.fill: parent
         onClicked: checkBox.checked = !checkBox.checked
     }

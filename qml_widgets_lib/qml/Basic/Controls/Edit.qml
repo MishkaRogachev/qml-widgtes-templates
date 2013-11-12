@@ -7,7 +7,7 @@ BasicItem {
 
     property TextEdit textItem: TextEdit {
         parent: edit
-        width: edit.width
+        width: edit.width - 15
         anchors.centerIn: parent
         horizontalAlignment: Text.AlignHCenter
         antialiasing: true
