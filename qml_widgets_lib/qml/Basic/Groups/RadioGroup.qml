@@ -9,8 +9,10 @@ BasicItem {
     property alias radioGroupModel: repeater.model
     property int selectedItemIndex: -1
     property variant selectedItem: radioGroupModel[selectedItemIndex]
+    property int contentWidth: 0
 
     height: flow.height
+    width: contentWidth
 
     Flow {
         id: flow
@@ -46,6 +48,8 @@ BasicItem {
                     anchors.verticalCenter: parent.verticalCenter
                     text: modelData.text
                 }
+
+                Component.onCompleted: contentWidth += width + 25
             }
         }
     }

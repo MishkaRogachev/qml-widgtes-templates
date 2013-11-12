@@ -23,5 +23,6 @@
         <file>qml/Basic/Controls/RadioButton.qml</file>
         <file>qml/Basic/Groups/RadioGroup.qml</file>
         <file>qml/Basic/Controls/Edit.qml</file>
+        <file>qml/Basic/Controls/CheckBox.qml</file>
     </qresource>
 </RCC>

@@ -142,9 +142,33 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             spacing: 25
 
+            Row {
+                spacing: 10
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                CheckBox {
+                    id: capCheckBox
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+
+                Label {
+                    anchors.verticalCenter: parent.verticalCenter
+                    text: "All Uppercase"
+                }
+
+                CheckBox {
+                    id: wrapCheckBox
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+
+                Label {
+                    anchors.verticalCenter: parent.verticalCenter
+                    text: "Wrap"
+                }
+            }
+
             RadioGroup {
                 id: radioGroup
-                width: parent.width
                 anchors.horizontalCenter: parent.horizontalCenter
                 radioGroupModel: [
                     { role: Text.AlignLeft, text: "Left", checked: false },
@@ -152,19 +176,19 @@ Item {
                     { role: Text.AlignRight, text: "Right", checked: false }
                 ]
             }
+
             Edit {
+                width: parent.width
+                anchors.horizontalCenter: parent.horizontalCenter
                 textItem.horizontalAlignment: radioGroup.selectedItem.role
-                textItem.text: "With fainting soul athirst for Grace,
-I wandered in a desert place,
-And at the crossing of the ways
-I saw a sixfold Seraph blaze..."
+                textItem.font.capitalization: capCheckBox.checked ?
+                                                  Font.AllUppercase :
+                                                  Font.MixedCase
+                textItem.wrapMode: wrapCheckBox.checked ?
+                                       TextEdit.WordWrap :
+                                       TextEdit.WrapAnywhere
+                textItem.text: "The quick brown fox jumps over the lazy dog."
             }
-
-            //CheckBoxes
-
-            //RadioButtons
-
-            //TextEdit
         }
     }
 }

@@ -8,7 +8,7 @@ BasicItem {
     property alias checked: fill.visible
     signal clicked()
 
-    width: 30
+    width: 25
     height: width
 
     Bordered {
