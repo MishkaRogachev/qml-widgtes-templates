@@ -5,7 +5,7 @@ import "../Misk"
 Widget {
     id: menu
 
-    property alias model: repeater.model
+    property alias menuModel: repeater.model
     signal accepted(string id)
     // model item:
     // string "type"("simple", "separator")

@@ -3,6 +3,7 @@ import "../Basic/Widgets"
 import "../Basic/Controls"
 import "../Basic/Display"
 import "../Basic/Misk"
+import "../Basic/Groups"
 
 Item {
     id: controlsTab
@@ -140,6 +141,16 @@ Item {
             width: parent.width / 2
             anchors.verticalCenter: parent.verticalCenter
             spacing: 25
+
+            RadioGroup {
+                id: radioGroup
+                width: parent.width
+                radioGroupModel: [
+                    { text: "Left", checked: true },
+                    { text: "Middle", checked: false },
+                    { text: "Right", checked: false }
+                ]
+            }
 
 
             //CheckBoxes

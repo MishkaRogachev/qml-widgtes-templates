@@ -5,10 +5,10 @@ import "../Misk"
 BasicItem {
     id: bar
 
-    property alias model: repeater.model
+    property alias barModel: repeater.model
     // model item: (string "text" or/and url "icon")
-    property variant activeItem: repeater.model[activeItemIndex]
-    property int activeItemIndex: -1
+    property variant selectedItem: repeater.model[selectedItemIndex]
+    property int selectedItemIndex: -1
 
     anchors.left: parent.left
     anchors.right: parent.right
@@ -57,18 +57,18 @@ BasicItem {
             Repeater {
                 id: repeater
 
-                property variant activeItem: repeater.itemAt(activeItemIndex)
+                property variant activeItem: repeater.itemAt(selectedItemIndex)
 
                 Clickable {
                     id: label
                     width: row.width / repeater.count
                     text: modelData.text ? modelData.text : ""
                     icon: modelData.icon ? modelData.icon : ""
-                    onClicked: activeItemIndex = index
+                    onClicked: selectedItemIndex = index
                     palette: bar.palette
                 }
             }
         }
     }
-    Component.onCompleted: activeItemIndex = 0
+    Component.onCompleted: selectedItemIndex = 0
 }

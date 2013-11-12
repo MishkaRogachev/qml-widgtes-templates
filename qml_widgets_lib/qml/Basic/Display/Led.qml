@@ -9,7 +9,7 @@ BasicItem {
     property bool active: false
 
     width: 12
-    height: 12
+    height: width
 
     Bordered {
         anchors.fill: parent

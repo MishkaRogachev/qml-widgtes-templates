@@ -32,7 +32,6 @@ BasicItem {
             color: palette.colorBackgroundText
             font.pointSize: 21
         }
-
     }
 
     Glow {

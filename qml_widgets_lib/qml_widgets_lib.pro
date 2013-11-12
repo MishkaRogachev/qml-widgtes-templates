@@ -32,5 +32,7 @@ OTHER_FILES += \
     qml/Basic/Controls/MenuClickable.qml \
     qml/Basic/Controls/LineEdit.qml \
     qml/Basic/Misk/ForegroundItem.qml \
-    qml/Basic/Display/Led.qml
+    qml/Basic/Display/Led.qml \
+    qml/Basic/Controls/RadioButton.qml \
+    qml/Basic/Groups/RadioGroup.qml
 

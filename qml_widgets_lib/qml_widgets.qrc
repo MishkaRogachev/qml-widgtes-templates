@@ -20,5 +20,7 @@
         <file>qml/Basic/Controls/LineEdit.qml</file>
         <file>qml/Basic/Misk/ForegroundItem.qml</file>
         <file>qml/Basic/Display/Led.qml</file>
+        <file>qml/Basic/Controls/RadioButton.qml</file>
+        <file>qml/Basic/Groups/RadioGroup.qml</file>
     </qresource>
 </RCC>

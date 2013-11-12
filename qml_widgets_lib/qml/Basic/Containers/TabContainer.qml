@@ -5,7 +5,7 @@ import "../Controls"
 BasicItem {
     id: tabWidget
 
-    property alias tabsModel: tabBar.model
+    property alias tabsModel: tabBar.barModel
     // model item: url "source" and (string "text" or/and url "icon")
 
     Bar {
@@ -17,7 +17,7 @@ BasicItem {
 
     Loader {
         id: tabContents
-        source: tabBar.activeItem.source ? tabBar.activeItem.source : ""
+        source: tabBar.selectedItem.source ? tabBar.selectedItem.source : ""
         anchors.top: tabBar.bottom
         anchors.left: parent.left
         anchors.right: parent.right
