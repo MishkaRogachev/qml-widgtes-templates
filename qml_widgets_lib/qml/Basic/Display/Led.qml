@@ -1,5 +1,4 @@
 import QtQuick 2.0
-import QtGraphicalEffects 1.0
 import "../"
 import "../Misk"
 
@@ -15,15 +14,11 @@ BasicItem {
         anchors.fill: parent
     }
 
-    RectangularGlow {
+    Rectangle {
         anchors.fill: parent
-        cornerRadius: height / 2
+        radius: height / 2
         color: palette.colorActive
         antialiasing: true
         visible: led.active
-        glowRadius: 3
-        spread: 0.1
     }
-
-
 }

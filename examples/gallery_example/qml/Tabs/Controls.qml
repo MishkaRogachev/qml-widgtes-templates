@@ -147,8 +147,8 @@ Item {
                 width: parent.width
                 anchors.horizontalCenter: parent.horizontalCenter
                 radioGroupModel: [
-                    { role: Text.AlignLeft, text: "Left", checked: true },
-                    { role: Text.AlignHCenter, text: "Middle", checked: false },
+                    { role: Text.AlignLeft, text: "Left", checked: false },
+                    { role: Text.AlignHCenter, text: "Middle", checked: true },
                     { role: Text.AlignRight, text: "Right", checked: false }
                 ]
             }
