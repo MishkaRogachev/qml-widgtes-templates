@@ -8,172 +8,237 @@ import "../Basic/Groups"
 Item {
     id: controlsTab
 
-    Column {
-        anchors.left: parent.left
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.margins: 50
+    Row {
+        anchors.centerIn: parent
+        anchors.margins: 25
         spacing: 25
 
-        Row {
+        Column {
             spacing: 25
-            anchors.right: parent.right
-            anchors.rightMargin: -led.width - spacing
 
-            Label { text: qsTr("Login") }
-
-            LineEdit {
-                id: loginEdit
-                width: 200
+            Label {
+                text: qsTr("Content Buttons");
+                anchors.horizontalCenter: parent.horizontalCenter
             }
 
-            Led {
-                id: led
-                active: loginEdit.textItem.length > 5
-                anchors.verticalCenter: parent.verticalCenter
-            }
-        }
+            Row {
+                spacing: 10
+                anchors.horizontalCenter: parent.horizontalCenter
 
-        Row {
-            spacing: 25
-            anchors.right: parent.right
+                Clickable { text: qsTr("Button") }
 
-            Label { text: qsTr("Password") }
+                MenuClickable {
+                    text: qsTr("Dropdown")
 
-            LineEdit {
-                id: passwordEdit
-                width: 200
-                textItem.echoMode: TextInput.Password
-            }
-        }
-
-        ProgressBar {
-            value: passwordEdit.textItem.length
-            maxValue: 7
-            width: passwordEdit.width
-            anchors.right: parent.right
-        }
-
-        Row {
-            spacing: 15
-            anchors.right: parent.right
-
-            Clickable {
-                text: qsTr("Ok")
+                    menu.menuModel: [
+                        { text: "Entry 1",       type: "simple" },
+                        { text: "Entry 2",       type: "simple" },
+                        { text: "Another entry", type: "simple" },
+                        { type: "separator"                     },
+                        { text: "Last entry",    type: "simple" } ]
+                }
             }
 
-            Clickable {
-                text: qsTr("Cancel")
+            Label {
+                text: qsTr("Activity Buttons");
+                anchors.horizontalCenter: parent.horizontalCenter
             }
-        }
 
-        Grid {
-            rows: 4
-            columns: 3
-            spacing: 15
-            anchors.right: parent.right
+            Row {
+                spacing: 25
+                anchors.horizontalCenter: parent.horizontalCenter
 
-            Repeater {
-                model: [
-                    { text: "1" }, { text: "2" }, { text: "3" },
-                    { text: "4" }, { text: "5" }, { text: "6" },
-                    { text: "7" }, { text: "8" }, { text: "9" },
-                    { text: "*" }, { text: "0" }, { text: "#" } ]
+                Row {
+                    spacing: 10
 
-                Button {
-                    text: modelData.text
+                    Button { text: "◂" }
+
+                    Button { text: "▸" }
+                }
+
+                Row {
+                    spacing: 10
+
+                    Button { text: "✉" }
+
+                    Button { text: "✍" }
+                }
+            }
+
+            Grid {
+                rows: 4
+                columns: 3
+                spacing: 15
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Repeater {
+                    model: [
+                        { text: "1" }, { text: "2" }, { text: "3" },
+                        { text: "4" }, { text: "5" }, { text: "6" },
+                        { text: "7" }, { text: "8" }, { text: "9" },
+                        { text: "*" }, { text: "0" }, { text: "#" } ]
+
+                    Button {
+                        text: modelData.text
+                    }
                 }
             }
         }
-    }
 
-    Column {
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.margins: 50
-        spacing: 25
-
-        Row {
+        Column {
             spacing: 25
-            anchors.right: parent.right
 
-            Label { text: qsTr("Enabled") }
-
-            Switch { id: enableSwitch; }
-        }
-
-        Row {
-            spacing: 25
-            anchors.right: parent.right
-
-            Label { text: qsTr("Make font <i>Italic</i>") }
-
-            Switch {
-                id: fontSwitch
-                offText: qsTr("NO")
-                onText: qsTr("YES")
+            Label {
+                text: qsTr("Sliders");
+                anchors.horizontalCenter: parent.horizontalCenter
             }
-        }
 
-        Slider {
-            id: slider
-            anchors.horizontalCenter: parent.horizontalCenter
-            minValue: 11
-            maxValue: 27
-            value: 16
-        }
+            Row {
+                anchors.horizontalCenter: parent.horizontalCenter
 
-        Row {
-            spacing: 10
-            anchors.horizontalCenter: parent.horizontalCenter
+                Label {
+                    text:"✲"
+                    anchors.verticalCenter: parent.verticalCenter
+                }
 
-            CheckBox {
-                id: capCheckBox
-                anchors.verticalCenter: parent.verticalCenter
+                Slider { }
+
+                Label {
+                    text:"✱"
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+            }
+
+            Row {
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Label {
+                    text: qsTr("Low")
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+
+                Slider { width: 275 }
+
+                Label {
+                    text: qsTr("High")
+                    anchors.verticalCenter: parent.verticalCenter
+                }
             }
 
             Label {
-                anchors.verticalCenter: parent.verticalCenter
-                text: "All Uppercase"
+                text: qsTr("Switches");
+                anchors.horizontalCenter: parent.horizontalCenter
             }
 
-            CheckBox {
-                id: wrapCheckBox
-                checked: true
-                anchors.verticalCenter: parent.verticalCenter
+            Row {
+                anchors.horizontalCenter: parent.horizontalCenter
+                spacing: 25
+
+                Switch {}
+
+                Switch {
+                    switchEnabled: false
+                    switched: true
+                    onText: qsTr("YES")
+                    offText: qsTr("NO")
+                }
+
+                Switch {
+                    switched: true
+                    onText: qsTr("ON")
+                    offText: qsTr("OFF")
+                }
             }
 
             Label {
-                anchors.verticalCenter: parent.verticalCenter
-                text: "Wrap"
+                text: qsTr("Bars");
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Bar {
+                barModel: [ { text: qsTr("One") },
+                            { text: qsTr("Two") },
+                            { text: qsTr("Three") } ]
+            }
+
+            Row {
+                anchors.horizontalCenter: parent.horizontalCenter
+                spacing: 25
+
+                    Bar {
+                    width: 200
+                    barModel: [ { text: qsTr("≡") },
+                                { text: qsTr("⌘") },
+                                { text: qsTr("⌛") } ]
+                    }
+
+                    Bar {
+                    width: 200
+                    barModel: [ { text: qsTr("Apps") },
+                                { text: qsTr("Places") } ]
+                    }
             }
         }
 
-        RadioGroup {
-            id: radioGroup
-            anchors.horizontalCenter: parent.horizontalCenter
-            radioGroupModel: [
-                { role: Text.AlignLeft, text: "Left", checked: false },
-                { role: Text.AlignHCenter, text: "Middle", checked: true },
-                { role: Text.AlignRight, text: "Right", checked: false }
-            ]
-        }
+        Column {
+            spacing: 25
 
-        Edit {
-            width: parent.width
-            anchors.horizontalCenter: parent.horizontalCenter
-            enabled: enableSwitch.switched
-            textItem.font.italic: fontSwitch.switched
-            textItem.font.pointSize: slider.value
-            textItem.horizontalAlignment: radioGroup.selectedItem.role
-            textItem.font.capitalization: capCheckBox.checked ?
-                                              Font.AllUppercase :
-                                              Font.MixedCase
-            textItem.wrapMode: wrapCheckBox.checked ?
-                                   TextEdit.WordWrap :
-                                   TextEdit.WrapAnywhere
-            textItem.text: "The quick brown fox jumps over the lazy dog."
+            Label {
+                text: qsTr("Checkboxes");
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            CheckGroup {
+                id: checkGroup
+                anchors.horizontalCenter: parent.horizontalCenter
+                checkGroupModel: [
+                    { text: "One", checked: false },
+                    { text: "Two", checked: true },
+                    { text: "Three", checked: false } ]
+            }
+
+
+            Label {
+                text: qsTr("Radio Buttons");
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            RadioGroup {
+                id: radioGroup
+                anchors.horizontalCenter: parent.horizontalCenter
+                radioGroupModel: [
+                    { text: "Left", checked: false },
+                    { text: "Middle", checked: true },
+                    { text: "Right", checked: false } ]
+            }
+
+            Label {
+                text: qsTr("Line Edits");
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            LineEdit {
+                width: 350
+                textItem.text: qsTr("Line edit, please!");
+            }
+
+            LineEdit {
+                width: 350
+                textItem.text: "hahaha"
+                textItem.echoMode: TextInput.Password
+            }
+
+            Label {
+                text: qsTr("Text Edit");
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Edit {
+                width: parent.width
+                anchors.horizontalCenter: parent.horizontalCenter
+                textItem.wrapMode: TextEdit.WordWrap
+                textItem.text: "The quick brown fox jumps over the lazy dog."
+            }
         }
     }
 }

@@ -9,8 +9,7 @@ BasicItem {
     property variant selectedItem: repeater.model[selectedItemIndex]
     property int selectedItemIndex: -1
 
-    anchors.left: parent.left
-    anchors.right: parent.right
+    width: parent.width
     height: row.height
 
     Bordered {

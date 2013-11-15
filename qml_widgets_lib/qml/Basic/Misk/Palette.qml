@@ -10,6 +10,6 @@ Item {
     property color colorForegroundText: "#000000"
     property color colorItem: "#FFFFFF"
     property color colorActive: "#329BD8"
-    property color colorShadow: "#AC292D39"
+    property color colorShadow: "#AC082C43"
     property color colorTransparent: "#00000000"
 }

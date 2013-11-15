@@ -24,5 +24,6 @@
         <file>qml/Basic/Groups/RadioGroup.qml</file>
         <file>qml/Basic/Controls/Edit.qml</file>
         <file>qml/Basic/Controls/CheckBox.qml</file>
+        <file>qml/Basic/Groups/CheckGroup.qml</file>
     </qresource>
 </RCC>

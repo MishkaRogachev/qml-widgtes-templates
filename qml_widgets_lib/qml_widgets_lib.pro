@@ -36,5 +36,6 @@ OTHER_FILES += \
     qml/Basic/Controls/RadioButton.qml \
     qml/Basic/Groups/RadioGroup.qml \
     qml/Basic/Controls/Edit.qml \
-    qml/Basic/Controls/CheckBox.qml
+    qml/Basic/Controls/CheckBox.qml \
+    qml/Basic/Groups/CheckGroup.qml
 

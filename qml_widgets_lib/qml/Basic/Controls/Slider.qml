@@ -9,12 +9,14 @@ BasicItem {
     property alias value: bar.value
     property alias minValue: bar.minValue
     property alias maxValue: bar.maxValue
+    property alias preferedWidth: bar.width
 
-    width: bar.width
+    width: preferedWidth
     height: slideable.height
 
     ProgressBar {
         id: bar
+        width: parent.width
         anchors.centerIn: parent
         palette: slider.palette
     }

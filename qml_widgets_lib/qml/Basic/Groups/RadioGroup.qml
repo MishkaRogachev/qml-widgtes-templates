@@ -48,7 +48,6 @@ BasicItem {
                     anchors.verticalCenter: parent.verticalCenter
                     text: modelData.text
                 }
-
                 Component.onCompleted: contentWidth += width + 25
             }
         }

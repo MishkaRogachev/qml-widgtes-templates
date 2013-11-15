@@ -9,10 +9,12 @@ BasicItem {
     property alias text: textItem.text
     property alias icon: iconItem.source
     property alias pressed: mouseArea.pressed
+    property int contentWidth: Math.max(contentsRow.width, contentsRow.height)
+    property alias contentHeight: contentsRow.height
     signal clicked()
 
-    width: Math.max(contentsRow.width, contentsRow.height)
-    height: contentsRow.height
+    width: contentWidth
+    height: contentHeight
 
     Row {
         id: contentsRow

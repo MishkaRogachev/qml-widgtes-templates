@@ -16,7 +16,6 @@ BasicItem {
     Bordered {
         id: background
         anchors.fill: parent
-        antialiasing: true
         selected: switchEnabled
         palette: switcher.palette
     }
