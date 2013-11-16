@@ -16,12 +16,18 @@ BasicItem {
         palette: tabWidget.palette
     }
 
-    Loader {
-        id: tabContents
-        source: tabBar.selectedItem.source ? tabBar.selectedItem.source : ""
-        anchors.top: tabBar.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
+    Repeater {
+        id: repeater
+        model: tabsModel
+
+        Loader {
+            id: tabContentItem
+            source: modelData.source
+            visible: modelData.source === tabBar.selectedItem.source
+            anchors.top: tabBar.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+        }
     }
 }

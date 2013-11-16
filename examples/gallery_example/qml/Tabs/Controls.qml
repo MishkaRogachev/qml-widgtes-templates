@@ -31,11 +31,11 @@ Item {
                     text: qsTr("Dropdown")
 
                     menu.menuModel: [
-                        { text: "Entry 1",       type: "simple" },
-                        { text: "Entry 2",       type: "simple" },
-                        { text: "Another entry", type: "simple" },
-                        { type: "separator"                     },
-                        { text: "Last entry",    type: "simple" } ]
+                        { text: qsTr("Entry 1"),       type: "simple" },
+                        { text: qsTr("Entry 2"),       type: "simple" },
+                        { text: qsTr("Another entry"), type: "simple" },
+                        { type: qsTr("separator")                     },
+                        { text: qsTr("Last entry"),    type: "simple" } ]
                 }
             }
 
@@ -192,11 +192,10 @@ Item {
                 id: checkGroup
                 anchors.horizontalCenter: parent.horizontalCenter
                 checkGroupModel: [
-                    { text: "One", checked: false },
-                    { text: "Two", checked: true },
-                    { text: "Three", checked: false } ]
+                    { text: qsTr("One"), checked: false },
+                    { text: qsTr("Two"), checked: true },
+                    { text: qsTr("Three"), checked: false } ]
             }
-
 
             Label {
                 text: qsTr("Radio Buttons");
@@ -207,25 +206,19 @@ Item {
                 id: radioGroup
                 anchors.horizontalCenter: parent.horizontalCenter
                 radioGroupModel: [
-                    { text: "Left", checked: false },
-                    { text: "Middle", checked: true },
-                    { text: "Right", checked: false } ]
+                    { text: qsTr("Left"), checked: false },
+                    { text: qsTr("Middle"), checked: true },
+                    { text: qsTr("Right"), checked: false } ]
             }
 
             Label {
-                text: qsTr("Line Edits");
+                text: qsTr("Line Edit");
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
             LineEdit {
                 width: 350
                 textItem.text: qsTr("Line edit, please!");
-            }
-
-            LineEdit {
-                width: 350
-                textItem.text: "hahaha"
-                textItem.echoMode: TextInput.Password
             }
 
             Label {
@@ -237,7 +230,7 @@ Item {
                 width: parent.width
                 anchors.horizontalCenter: parent.horizontalCenter
                 textItem.wrapMode: TextEdit.WordWrap
-                textItem.text: "The quick brown fox jumps over the lazy dog."
+                textItem.text: qsTr("The quick brown fox jumps over the lazy dog.")
             }
         }
     }
