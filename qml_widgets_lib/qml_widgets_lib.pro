@@ -37,5 +37,7 @@ OTHER_FILES += \
     qml/Basic/Groups/RadioGroup.qml \
     qml/Basic/Controls/Edit.qml \
     qml/Basic/Controls/CheckBox.qml \
-    qml/Basic/Groups/CheckGroup.qml
+    qml/Basic/Groups/CheckGroup.qml \
+    qml/Basic/Misk/ScrollArea.qml \
+    qml/Basic/Controls/ScrollBar.qml
 

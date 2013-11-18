@@ -25,5 +25,7 @@
         <file>qml/Basic/Controls/Edit.qml</file>
         <file>qml/Basic/Controls/CheckBox.qml</file>
         <file>qml/Basic/Groups/CheckGroup.qml</file>
+        <file>qml/Basic/Misk/ScrollArea.qml</file>
+        <file>qml/Basic/Controls/ScrollBar.qml</file>
     </qresource>
 </RCC>

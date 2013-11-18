@@ -9,6 +9,7 @@ Item {
     property int absoluteX: functionsItem.absoluteXRecursive(basicItem)
     property int absoluteY: functionsItem.absoluteYRecursive(basicItem)
 
+    enabled: parent ? parent.enabled : true
     opacity: enabled ? 1.00 : 0.75
 
     Item {

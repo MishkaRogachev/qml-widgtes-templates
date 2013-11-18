@@ -226,11 +226,24 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
-            Edit {
+            ScrollArea {
+                id: scrollArea
                 width: parent.width
-                anchors.horizontalCenter: parent.horizontalCenter
-                textItem.wrapMode: TextEdit.WordWrap
-                textItem.text: qsTr("The quick brown fox jumps over the lazy dog.")
+                height: 100
+
+                sourceComponent: editComponent
+
+                Component {
+                    id: editComponent
+
+                    Edit {
+                        width: scrollArea.width - 15
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        textItem.wrapMode: TextEdit.WordWrap
+                        textItem.text:
+                            qsTr("The quick brown fox jumps over the lazy dog.")
+                    }
+                }
             }
         }
     }

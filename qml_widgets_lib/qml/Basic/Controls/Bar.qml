@@ -36,10 +36,8 @@ BasicItem {
                 Rectangle {
                     id: highlight
                     anchors.fill: parent
-                    anchors.topMargin: 0
-                    anchors.bottomMargin: 0
-                    anchors.leftMargin: -leftClipItem.anchors.leftMargin + 0
-                    anchors.rightMargin: -rightClipItem.anchors.rightMargin + 0
+                    anchors.leftMargin: - leftClipItem.anchors.leftMargin
+                    anchors.rightMargin: - rightClipItem.anchors.rightMargin
                     color: palette.colorActive
                     antialiasing: true
                     radius: height / 2

@@ -23,7 +23,8 @@ Clickable {
         anchors.verticalCenter: parent.verticalCenter
         width: contentWidth
         text: "▼"
-        color: palette.colorBackgroundText
+        color: menuClickable.enabled ? palette.colorBackgroundText :
+                                       palette.colorBackgroundTextSecondary
     }
 
     property Menu menu: Menu {
